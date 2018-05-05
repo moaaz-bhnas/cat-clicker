@@ -1,0 +1,163 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rammetto One', cursive;
+    margin: 0;
+    height: 100vh;
+/*    padding: 1rem;*/
+    background: url(../images/paws.jpg) no-repeat center / cover #ccc;
+    background-blend-mode: overlay;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    max-width: 100%;
+}
+
+ul {
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* ==============================================
+    Cats List 
+================================================= */
+.cats-list {
+    text-align: center;
+    align-self: stretch;
+    
+    background-color: rgba(255, 255, 255, .7);
+    
+    min-width: 12em;
+    padding: .5em;
+    
+    transition: background-color .3s;
+}
+
+.cats-list:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.cats-list li {
+    font-size: 2rem;
+    padding: .5em 0;
+    border-bottom: 0.1em solid transparent;
+    
+    transition-property: border-bottom;
+    transition-duration: .3s;
+    
+    cursor: pointer;
+}
+
+.cats-list li:hover {
+    border-bottom: 0.1em solid;
+}
+
+/* --- Cats --- */
+
+/* 1) Chloe --- */
+.chloe {
+    color: #797F95;
+}
+
+/* 2) Ozone --- */
+.ozone {
+    color: #CC6266;
+}
+
+/* 3) Tom --- */
+.tom {
+    color: #C8CECE;
+}
+
+/* 4) Garfield --- */
+.garfield {
+    color: #FCAA16
+}
+
+/* 5) Marie --- */
+.marie {
+    color: #F06594;
+}
+
+/* ==============================================
+    Main Cat
+================================================= */
+.cat {
+    margin: auto;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- Clicks --- */
+.clicks-record {
+    font-size: 3rem;
+    background-color: rgba(255, 255, 255, .9);
+    border: 0.063em solid;
+    box-shadow: 5px 5px;
+    border-radius: 1.2em;
+    
+    line-height: 1;
+    padding: .5em;
+    
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+/*
+.chloe .clicks-record {
+    color: #797F95;
+}
+
+.ozone .clicks-record {
+    color: #CC6266;
+}
+*/
+
+/* --- Cats names --- */
+.name {
+    margin: 1.2em 0 .4em;
+}
+
+/*
+.chloe .name {
+    color: #797F95;
+}
+
+.ozone .name {
+    color: #CC6266;
+}
+*/
+
+/* --- Cats Images --- */
+.cat img {
+    width: 100%;
+    max-width: 23em;
+    border: 0.05em solid transparent;
+    border-radius: 2em;
+    
+    transition-property: background-color, border, box-shadow;
+    transition-duration: .4s;
+    
+    cursor: pointer;
+}
+
+.cat img:hover {
+    background-color: rgba(255, 255, 255, .8);
+    border: 0.05em solid #d9e4ea;
+    box-shadow: 2px 2px 10px #d9e4ea;
+}
+
+
+
+
+
