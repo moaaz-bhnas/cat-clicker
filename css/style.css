@@ -31,11 +31,12 @@ ul {
 .cats-list {
     text-align: center;
     align-self: stretch;
-    
     background-color: rgba(255, 255, 255, .7);
-    
-    min-width: 12em;
     padding: .5em;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     
     transition: background-color .3s;
 }
@@ -45,7 +46,7 @@ ul {
 }
 
 .cats-list li {
-    font-size: 2rem;
+    font-size: 1.2rem;
     padding: .5em 0;
     border-bottom: 0.1em solid transparent;
     
@@ -99,7 +100,7 @@ ul {
 
 /* --- Clicks --- */
 .clicks-record {
-    font-size: 3rem;
+    font-size: 2rem;
     background-color: rgba(255, 255, 255, .9);
     border: 0.063em solid;
     box-shadow: 5px 5px;
@@ -113,30 +114,11 @@ ul {
     align-items: center;
 }
 
-/*
-.chloe .clicks-record {
-    color: #797F95;
-}
-
-.ozone .clicks-record {
-    color: #CC6266;
-}
-*/
-
 /* --- Cats names --- */
 .name {
+    font-size: 1.2rem;
     margin: 1.2em 0 .4em;
 }
-
-/*
-.chloe .name {
-    color: #797F95;
-}
-
-.ozone .name {
-    color: #CC6266;
-}
-*/
 
 /* --- Cats Images --- */
 .cat img {
@@ -157,7 +139,20 @@ ul {
     box-shadow: 2px 2px 10px #d9e4ea;
 }
 
-
-
-
+/* ==============================================
+    Media Queries
+================================================= */
+@media (min-width: 505px) {
+    .cats-list li {
+        font-size: 2rem;
+    }
+    
+    .clicks-record {
+        font-size: 3rem;
+    }
+    
+    .name {
+        font-size: 1.5rem;
+    }
+}
 
