@@ -46,7 +46,7 @@ class Cat {
     render() {
         this.setColor();
         this.logClicksRecord();
-        displayedCat.clicksRecordElement.style.display = 'flex';
+        displayedCat.clicksRecordElement.classList.add('show');
         this.logName();
         this.setImage();
     }
@@ -57,8 +57,7 @@ const cats = new Map([['tom', new Cat('#C8CECE', 'Tom', 'images/tom.png')],
                       ['garfield', new Cat('#FCAA16', 'Garfield', 'images/garfield.png')],
                       ['marie', new Cat('#F06594', 'Marie', 'images/marie.png')],
                       ['meowth', new Cat('#DF7645', 'Meowth', 'images/meowth.png')],
-                      ['sylvester', new Cat('#1F2831', 'Sylvester', 'images/sylvester.png')],
-                      ['chloe', new Cat('#797F95', 'Chloe', 'images/chloe.png')]]);
+                      ['sylvester', new Cat('#1F2831', 'Sylvester', 'images/sylvester.png')]]);
 
 /* --- Cat List --- */
 for (const cat of cats) {

@@ -88,6 +88,10 @@ ul {
     align-items: center;
 }
 
+.show {
+    display: flex;
+}
+
 /* --- Cats names --- */
 .name {
     font-size: 1.2rem;
