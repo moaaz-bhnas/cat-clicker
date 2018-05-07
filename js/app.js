@@ -1,12 +1,13 @@
 'use strict';
 
-/* --- Cat DOM Elements --- */
-const displayedCat = {
-    element: document.querySelector('.cat'),
-    clicksRecordElement: document.querySelector('.clicks-record'),
-    nameElement: document.querySelector('.name'),
-    imageElement: document.querySelector('.cat-image')
-};
+/* --- Dom Elements --- */
+const catsList = document.querySelector('.cats-list'),
+      displayedCat = {
+          element: document.querySelector('.cat'),
+          clicksRecordElement: document.querySelector('.clicks-record'),
+          nameElement: document.querySelector('.name'),
+          imageElement: document.querySelector('.cat-image')
+      };
 
 /* --- Cat Class --- */
 class Cat {
@@ -15,6 +16,11 @@ class Cat {
         this.clicksRecord = 0;
         this.name = name;
         this.src = src;
+        this.listItem = `<li class="${this.name.toLowerCase()}">${this.name}</li>`;
+    }
+    
+    listCatName() {
+        catsList.insertAdjacentHTML('beforeEnd', this.listItem);
     }
     
     setColor() {
@@ -36,76 +42,47 @@ class Cat {
     setImage() {
         displayedCat.imageElement.setAttribute('src', this.src);
     }
+    
+    render() {
+        this.setColor();
+        this.logClicksRecord();
+        displayedCat.clicksRecordElement.style.display = 'flex';
+        this.logName();
+        this.setImage();
+    }
 }
 
 /* --- Instances --- */
-const chloe = new Cat('#797F95', 'Chloe', 'images/chloe.png'),
-      ozone = new Cat('#CC6266', 'Ozone', 'images/ozone.png'),
-      tom = new Cat('#C8CECE', 'Tom', 'images/tom.png'),
-      garfield = new Cat('#FCAA16', 'Garfield', 'images/garfield.png'),
-      marie = new Cat('#F06594', 'Marie', 'images/marie.png');
+const cats = new Map([['chloe', new Cat('#797F95', 'Chloe', 'images/chloe.png')],
+                      ['ozone', new Cat('#CC6266', 'Ozone', 'images/ozone.png')],
+                      ['tom', new Cat('#C8CECE', 'Tom', 'images/tom.png')],
+                      ['garfield', new Cat('#FCAA16', 'Garfield', 'images/garfield.png')],
+                      ['marie', new Cat('#F06594', 'Marie', 'images/marie.png')],
+                      ['sylvester', new Cat('#1F2831', 'Sylvester', 'images/sylvester.png')]]);
 
-/* --- list --- */
-const catsList = document.querySelector('.cats-list');
-      
+/* --- Cat List --- */
+for (const cat of cats) {
+    const [key, obj] = cat;
+    obj.listCatName();
+}
 
 /* ----- Click Events ----- */
-
 /* --- Select Cat --- */
 catsList.addEventListener('click', event => {
-    const catClass = event.target.className;
-    let cat;
-    
-    switch (catClass) {
-        case 'chloe':
-            cat = chloe;
-            break;
-        case 'ozone':
-            cat = ozone;
-            break;
-        case 'tom':
-            cat = tom;
-            break;
-        case 'garfield':
-            cat = garfield;
-            break;
-        case 'marie':
-            cat = marie;
-            break;
+    if (event.target.nodeName === 'LI') {
+        const catName = event.target.textContent.toLowerCase();
+        const currentCat = cats.get(catName);
+        currentCat.render();
     }
-    
-    cat.setColor();
-    cat.logClicksRecord();
-    displayedCat.clicksRecordElement.style.display = 'flex';
-    cat.logName();
-    cat.setImage();
 });
 
 /* --- Click Cat --- */
 displayedCat.imageElement.addEventListener('click', event => {
-    const imageSrc = event.target.getAttribute('src');
-    let cat;
+    const catName = event.target.parentElement.querySelector('.name').textContent.toLowerCase();
+    const currentCat = cats.get(catName); 
     
-    switch (imageSrc) {
-        case 'images/chloe.png':
-            cat = chloe;
-            break;
-        case 'images/ozone.png':
-            cat = ozone;
-            break;
-        case 'images/tom.png':
-            cat = tom;
-            break;
-        case 'images/garfield.png':
-            cat = garfield;
-            break;
-        case 'images/marie.png':
-            cat = marie;
-            break;
-    }
-    
-    cat.incrementClicksRecord();
-    cat.logClicksRecord();
+    currentCat.incrementClicksRecord();
+    currentCat.logClicksRecord();
 });
 
 
