@@ -16,7 +16,7 @@ class Cat {
         this.clicksRecord = 0;
         this.name = name;
         this.src = src;
-        this.listItem = `<li class="${this.name.toLowerCase()}">${this.name}</li>`;
+        this.listItem = `<li class="${this.name.toLowerCase()}" style="color: ${this.color}">${this.name}</li>`;
     }
     
     listCatName() {
@@ -54,10 +54,11 @@ class Cat {
 
 /* --- Instances --- */
 const cats = new Map([['chloe', new Cat('#797F95', 'Chloe', 'images/chloe.png')],
-                      ['ozone', new Cat('#CC6266', 'Ozone', 'images/ozone.png')],
                       ['tom', new Cat('#C8CECE', 'Tom', 'images/tom.png')],
                       ['garfield', new Cat('#FCAA16', 'Garfield', 'images/garfield.png')],
+                      ['ozone', new Cat('#CC6266', 'Ozone', 'images/ozone.png')],
                       ['marie', new Cat('#F06594', 'Marie', 'images/marie.png')],
+                      ['meowth', new Cat('#DF7645', 'Meowth', 'images/meowth.png')],
                       ['sylvester', new Cat('#1F2831', 'Sylvester', 'images/sylvester.png')]]);
 
 /* --- Cat List --- */
