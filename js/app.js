@@ -53,10 +53,8 @@ class Cat {
 }
 
 /* --- Instances --- */
-const cats = new Map([['chloe', new Cat('#797F95', 'Chloe', 'images/chloe.png')],
-                      ['tom', new Cat('#C8CECE', 'Tom', 'images/tom.png')],
+const cats = new Map([['tom', new Cat('#C8CECE', 'Tom', 'images/tom.png')],
                       ['garfield', new Cat('#FCAA16', 'Garfield', 'images/garfield.png')],
-                      ['ozone', new Cat('#CC6266', 'Ozone', 'images/ozone.png')],
                       ['marie', new Cat('#F06594', 'Marie', 'images/marie.png')],
                       ['meowth', new Cat('#DF7645', 'Meowth', 'images/meowth.png')],
                       ['sylvester', new Cat('#1F2831', 'Sylvester', 'images/sylvester.png')]]);
