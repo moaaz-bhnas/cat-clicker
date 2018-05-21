@@ -1,12 +1,12 @@
 'use strict';
 
 /* --- Dom Elements --- */
-const catsNamesList = document.querySelector('.cats-list'),
+const catsNamesList = $('.cats-list'),
       catTemplate = {
-          container: document.querySelector('.cat'),
-          clicksCount: document.querySelector('.clicks-record'),
-          name: document.querySelector('.name'),
-          image: document.querySelector('.cat-image')
+          container: $('.cat'),
+          clicksCount: $('.clicks-record'),
+          name: $('.name'),
+          image: $('.cat-image')
       };
 
 /* --- Cat Class --- */
@@ -20,33 +20,33 @@ class Cat {
     }
     
     listCatName() {
-        catsNamesList.insertAdjacentHTML('beforeEnd', this.listItem);
+        catsNamesList.append(this.listItem);
     }
     
     setColor() {
-        catTemplate.container.style.color = this.color;
+        catTemplate.container.css({color: this.color});
     }
     
-    logClicksRecord() {
-        catTemplate.clicksCount.textContent = this.clicksCount;
+    logClicksCount() {
+        catTemplate.clicksCount.text(this.clicksCount);
     }
     
-    incrementClicksRecord() {
+    incrementClicksCount() {
         this.clicksCount++;
     }
     
     logName() {
-        catTemplate.name.textContent = this.name;
+        catTemplate.name.text(this.name);
     }
     
     setImage() {
-        catTemplate.image.setAttribute('src', this.src);
+        catTemplate.image.attr('src', this.src);
     }
     
     render() {
         this.setColor();
-        this.logClicksRecord();
-        catTemplate.clicksCount.classList.add('show');
+        this.logClicksCount();
+        catTemplate.clicksCount.addClass('show');
         this.logName();
         this.setImage();
     }
@@ -68,23 +68,9 @@ const renderNamesList = () => {
 }
 renderNamesList();
 
-/* --- Cache Images --- */
-const images = [];
-
-const preloadImage = src => {
-    const image = new Image();
-    image.src = src;
-    images.push(image);
-}
-
-for (const cat of cats) {
-    const [key, object] = cat;
-    preloadImage(object.src);
-}
-
 /* ----- Click Events ----- */
 /* --- Select Cat --- */
-catsNamesList.addEventListener('click', event => {
+catsNamesList.click( event => {
     if (event.target.nodeName === 'LI') {
         const catName = event.target.textContent.toLowerCase();
         const currentCat = cats.get(catName);
@@ -93,13 +79,16 @@ catsNamesList.addEventListener('click', event => {
 });
 
 /* --- Click Cat --- */
-catTemplate.image.addEventListener('click', event => {
+catTemplate.image.click( event => {
     const catName = event.target.parentElement.querySelector('.name').textContent.toLowerCase();
     const currentCat = cats.get(catName); 
     
-    currentCat.incrementClicksRecord();
-    currentCat.logClicksRecord();
+    currentCat.incrementClicksCount();
+    currentCat.logClicksCount();
 });
+
+
+
 
 
 
