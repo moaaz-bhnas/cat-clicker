@@ -27,6 +27,10 @@ ul {
     list-style: none;
 }
 
+small {
+    font-size: .7rem;
+}
+
 /* ==============================================
     Cats List 
 ================================================= */
@@ -199,7 +203,7 @@ ul {
 
 .move {
 /*    transition-timing-function: cubic-bezier(.48,1.46,.68,1);*/
-    transform: translate(-6.7rem, -5.2rem)
+    transform: translate(-6.7rem, -5.2rem);
 }
 
 .add:hover {
@@ -239,6 +243,43 @@ ul {
     border-radius: .5rem;
 }
 
+/* --- Optional color msg --- */
+small {
+    height: 0;
+    overflow: hidden;
+    
+    transition: height .3s;
+}
+
+.show-msg {
+    height: 2.375rem;;
+}
+
+/* --- "Random" Word --- */
+.random {
+    display: inline-flex;
+}
+
+/* --- Letters --- */
+.r {
+    color: #90979f;
+}
+.a {
+    color: #fcaa16;
+}
+.n {
+    color: #f06594;
+}
+.d {
+    color: #df7654;
+}
+.o {
+    color: #1f2831;
+}
+.m {
+    color: #123abc;
+}
+
 .add-cat button {
     font-family: inherit;
     font-size: .9rem;
@@ -253,32 +294,6 @@ ul {
     
     transition-property: box-shadow, background-color;
     transition-duration: .3s;
-}
-
-@media (min-width: 920px) {
-    .cat-and-add {
-        flex-direction: row;
-    }
-    .cat img {
-        max-width: 22rem;
-        max-height: 18rem;
-    }
-    .add-cat {
-        padding: .7em;
-    }
-    .add-cat input {
-        font-size: .8rem;
-        margin-bottom: .5em;
-    }
-    .add-cat button {
-        font-size: 1rem;
-    }
-    .cats-list,
-    .cat-and-add {
-/*        min-width: 920px;*/
-        padding-left: calc(100vw / 2 - 920px /2) !important;
-        padding-right: calc(100vw / 2 - 920px /2) !important;
-    }
 }
 
 .add-cat:invalid button:hover {
@@ -330,13 +345,6 @@ ul {
 
 /* --- Minor Breakpoints & Max Width --- */
 @media (min-width: 920px) {
-    .cat-and-add {
-        flex-direction: row;
-    }
-    .cat img {
-        max-width: 22rem;
-        max-height: 18rem;
-    }
     .add-cat {
         padding: .7em;
     }

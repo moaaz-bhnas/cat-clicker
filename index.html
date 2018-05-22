@@ -15,7 +15,7 @@
         <div class="cat">
             <div class="clicks-record"></div>
             <h2 class="name"></h2>
-            <img class="cat-image">
+            <img class="cat-image" alt="Cat">
         </div>
 
         <div class="plus-and-form">
@@ -24,7 +24,19 @@
             <form class="add-cat">
                 <input class="new-cat-name" type="text" placeholder="cat name" required>
                 <input class="new-cat-src" type="text" placeholder="cat image url" required>
-                <input class="new-cat-color" type="text" placeholder="color">
+                <input class="new-cat-color" type="text" placeholder="color (any color format)">
+                <small>
+                    <i>(Optional) if not specified, a 
+                        <span class="random">
+                            <span class="r">r</span>
+                            <span class="a">a</span>
+                            <span class="n">n</span>
+                            <span class="d">d</span>
+                            <span class="o">o</span>
+                            <span class="m">m</span>
+                        </span>
+                    color will be used.</i> 
+                </small>
                 <button type="submit">add cat</button>
             </form>
         </div>

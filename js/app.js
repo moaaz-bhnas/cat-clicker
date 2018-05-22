@@ -25,6 +25,7 @@ const catsNamesList = document.querySelector('.cats-list'),
           srcInput: document.querySelector('.new-cat-src'),
           colorInput: document.querySelector('.new-cat-color'),
           addBtn: document.querySelector('button'),
+          colorMsg: document.querySelector('small'),
           
           emptyInputs() {
               this.nameInput.value = '';
@@ -234,8 +235,19 @@ newCat.colorInput.addEventListener('input', function() {
     this.style.color = newCat.colorInput.value;
 });
 
-/* --- pop-up add sign --- */
+/* --- form pop-up and sign move --- */
 addCatSign.addEventListener('click', function() {
     this.classList.toggle('move');
     addCatForm.classList.toggle('pop-up');
+});
+
+/* --- Optional Color Message --- */
+newCat.colorInput.addEventListener('focusin', function() {
+    newCat.colorMsg.classList.add('show-msg');
+    addCatSign.style.transform = 'translate(-6.7rem, calc(-5.2rem - 2.375rem / 2))';
+});
+
+newCat.colorInput.addEventListener('focusout', function() {
+    newCat.colorMsg.classList.remove('show-msg');
+    addCatSign.style.transform = 'translate(-6.7rem, -5.2rem)';
 });
