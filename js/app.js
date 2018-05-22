@@ -244,10 +244,8 @@ addCatSign.addEventListener('click', function() {
 /* --- Optional Color Message --- */
 newCat.colorInput.addEventListener('focusin', function() {
     newCat.colorMsg.classList.add('show-msg');
-    addCatSign.style.transform = 'translate(-6.7rem, calc(-5.2rem - 2.375rem / 2))';
 });
 
 newCat.colorInput.addEventListener('focusout', function() {
     newCat.colorMsg.classList.remove('show-msg');
-    addCatSign.style.transform = 'translate(-6.7rem, -5.2rem)';
 });

@@ -27,10 +27,6 @@ ul {
     list-style: none;
 }
 
-small {
-    font-size: .7rem;
-}
-
 /* ==============================================
     Cats List 
 ================================================= */
@@ -245,14 +241,15 @@ small {
 
 /* --- Optional color msg --- */
 small {
-    height: 0;
+    font-size: .7rem;
+    max-height: 0;
     overflow: hidden;
     
-    transition: height .3s;
+    transition: max-height .3s;
 }
 
 .show-msg {
-    height: 2.375rem;;
+    max-height: 70px;
 }
 
 /* --- "Random" Word --- */
