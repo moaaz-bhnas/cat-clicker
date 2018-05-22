@@ -19,21 +19,21 @@ const catsNamesList = document.querySelector('.cats-list'),
           }
       },
       addCatForm = document.querySelector('.add-cat'),
-      catAddSign = document.querySelector('.add'),
+      addCatSign = document.querySelector('.add'),
       newCat = {
-          name: document.querySelector('.new-cat-name'),
-          src: document.querySelector('.new-cat-src'),
-          color: document.querySelector('.new-cat-color'),
+          nameInput: document.querySelector('.new-cat-name'),
+          srcInput: document.querySelector('.new-cat-src'),
+          colorInput: document.querySelector('.new-cat-color'),
           addBtn: document.querySelector('button'),
           
           emptyInputs() {
-              this.name.value = '';
-              this.src.value = '';
-              this.color.value = '';
+              this.nameInput.value = '';
+              this.srcInput.value = '';
+              this.colorInput.value = '';
           },
           
           resetColor() {
-              this.color.style.color = 'inherit';
+              this.colorInput.style.color = 'inherit';
           }
       };
 
@@ -59,7 +59,7 @@ class Cat {
         document.body.style.backgroundColor = this.color;
         addCatForm.style.color = this.color;
         newCat.addBtn.style.backgroundColor = this.color;
-        catAddSign.style.color = this.color;
+        addCatSign.style.color = this.color;
     }
     
     logClicksRecord() {
@@ -184,7 +184,7 @@ catsNamesList.addEventListener('click', event => {
                     catsNamesList.style.padding = 0;
                     addCatForm.style.color = 'grey';
                     newCat.addBtn.style.backgroundColor = 'grey';
-                    catAddSign.style.color = 'grey';
+                    addCatSign.style.color = 'grey';
                 } else {
                     displayRandomCat();
                 }   
@@ -208,14 +208,14 @@ addCatForm.addEventListener('submit', event => {
     
     catsNamesList.style.padding = '.5em';
     
-    let name = newCat.name.value.toLowerCase(),
-        src = newCat.src.value,
+    let name = newCat.nameInput.value.toLowerCase(),
+        src = newCat.srcInput.value,
         color;
     
-    if (newCat.color.style.color === 'inherit') {
+    if (newCat.colorInput.style.color === 'inherit') {
         color = generateRandomColor();   
     } else {
-        color = newCat.color.value;
+        color = newCat.colorInput.value;
     }
     
     cats.set(name, new Cat(color, (name[0].toUpperCase() + name.slice(1).toLowerCase()), src));
@@ -230,13 +230,13 @@ addCatForm.addEventListener('submit', event => {
 });
 
 /* --- Color Input --- */
-newCat.color.addEventListener('input', function() {
+newCat.colorInput.addEventListener('input', function() {
     this.style.color = 'inherit';
-    this.style.color = newCat.color.value;
+    this.style.color = newCat.colorInput.value;
 });
 
 /* --- pop-up add sign --- */
-catAddSign.addEventListener('click', function() {
+addCatSign.addEventListener('click', function() {
     this.classList.toggle('move');
     addCatForm.classList.toggle('pop-up');
 });
