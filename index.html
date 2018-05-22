@@ -4,16 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cat Clicker</title>
+    <script src="https://use.fontawesome.com/5bf288d784.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Rammetto+One" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <ul class="cats-list"></ul>
    
-    <div class="cat">
-        <div class="clicks-record"></div>
-        <h2 class="name"></h2>
-        <img class="cat-image">
+    <div class="cat-and-add">
+        <div class="cat">
+            <div class="clicks-record"></div>
+            <h2 class="name"></h2>
+            <img class="cat-image">
+        </div>
+
+        <div class="plus-and-form">
+            <span class="add fa fa-plus" title="Add new cat"></span>
+
+            <form class="add-cat">
+                <input class="new-cat-name" type="text" placeholder="name" required>
+                <input class="new-cat-src" type="text" placeholder="url" required>
+                <input class="new-cat-color" type="text" placeholder="color">
+                <button type="submit">add cat</button>
+            </form>
+        </div>
     </div>
     
 <!--    <script src="js/jquery-3.3.1.js"></script>-->
