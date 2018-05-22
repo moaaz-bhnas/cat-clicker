@@ -212,10 +212,12 @@ addCatForm.addEventListener('submit', event => {
         src = newCat.srcInput.value,
         color;
     
-    if (newCat.colorInput.style.color === 'inherit') {
-        color = generateRandomColor();   
+    if (newCat.colorInput.style.color === 'inherit' || newCat.colorInput.style.color === '') {
+        color = generateRandomColor();
+        console.log(1)
     } else {
         color = newCat.colorInput.value;
+        console.log(2)
     }
     
     cats.set(name.toLowerCase(), new Cat(color, (name[0].toUpperCase() + name.slice(1).toLowerCase()), src));
