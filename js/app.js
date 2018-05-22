@@ -15,7 +15,7 @@ const catsNamesList = document.querySelector('.cats-list'),
               this.clicksCount.classList.remove('show');
               this.clicksCount.textContent = '';
               this.name.textContent = '';
-              this.image.setAttribute('src', '');
+              this.image.removeAttribute('src');
           }
       },
       addCatForm = document.querySelector('.add-cat'),
