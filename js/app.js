@@ -141,7 +141,6 @@ const displayRandomCat = () => {
     
     fadeOutIn(randomCat);
 }
-
 displayRandomCat();
 
 /* --- Random Color Generator --- */
@@ -208,7 +207,7 @@ addCatForm.addEventListener('submit', event => {
     
     catsNamesList.style.padding = '.5em';
     
-    let name = newCat.nameInput.value.toLowerCase(),
+    let name = newCat.nameInput.value,
         src = newCat.srcInput.value,
         color;
     
@@ -218,7 +217,7 @@ addCatForm.addEventListener('submit', event => {
         color = newCat.colorInput.value;
     }
     
-    cats.set(name, new Cat(color, (name[0].toUpperCase() + name.slice(1).toLowerCase()), src));
+    cats.set(name.toLowerCase(), new Cat(color, (name[0].toUpperCase() + name.slice(1).toLowerCase()), src));
     
     catsNamesList.innerHTML = '';
     

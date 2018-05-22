@@ -49,7 +49,7 @@ ul {
 /* --- Cat li --- */
 .cats-list li {
     font-size: 1.2rem;
-    padding: 0 .3em;
+    padding: 0 .5em;
     
     display: flex;
     align-items: center;
@@ -58,7 +58,7 @@ ul {
 
 /* --- Cat Name --- */
 .cats-list .cat-name {
-    padding: .3em .6em .3em 0;
+    padding: .3em .45em .3em 0;
     border-bottom: 0.1em solid transparent;
     
     transition-property: border-bottom;
@@ -89,7 +89,7 @@ ul {
     Cat Template and Add Form
 ================================================= */
 .cat-and-add {
-    padding: 1rem;
+    padding: 1em;
     
     flex-grow: 1;
     
@@ -111,7 +111,7 @@ ul {
             
     transition: opacity .15s;
     
-    margin-bottom: .5rem;
+    margin-bottom: .5em;
 }
 
 .fade-out {
@@ -199,7 +199,7 @@ ul {
 
 .move {
 /*    transition-timing-function: cubic-bezier(.48,1.46,.68,1);*/
-    transform: translate(-107px, -83px)
+    transform: translate(-6.7rem, -5.2rem)
 }
 
 .add:hover {
@@ -211,7 +211,7 @@ ul {
 =================================== */
 .add-cat {
     background-color: #fff;
-    max-width: 217px;
+    max-width: 13.6rem;
     padding: .5rem;
     border: 3px solid;
     border-radius: .9rem;
@@ -233,8 +233,8 @@ ul {
     font-family: inherit;
     color: inherit;
     
-    margin-bottom: .3rem;
-    padding: .2rem;
+    margin-bottom: .4em;
+    padding: .25em;
     border: 2px solid;
     border-radius: .5rem;
 }
@@ -244,8 +244,8 @@ ul {
     font-size: .9rem;
     font-weight: bold;
     color: #fff;
-    padding: .3rem .6rem;
-    margin-top: .2em;
+    padding: .3em .6em;
+    margin-top: .25em;
     border: none;
     border-radius: .6rem;
     
@@ -253,6 +253,32 @@ ul {
     
     transition-property: box-shadow, background-color;
     transition-duration: .3s;
+}
+
+@media (min-width: 920px) {
+    .cat-and-add {
+        flex-direction: row;
+    }
+    .cat img {
+        max-width: 22rem;
+        max-height: 18rem;
+    }
+    .add-cat {
+        padding: .7em;
+    }
+    .add-cat input {
+        font-size: .8rem;
+        margin-bottom: .5em;
+    }
+    .add-cat button {
+        font-size: 1rem;
+    }
+    .cats-list,
+    .cat-and-add {
+/*        min-width: 920px;*/
+        padding-left: calc(100vw / 2 - 920px /2) !important;
+        padding-right: calc(100vw / 2 - 920px /2) !important;
+    }
 }
 
 .add-cat:invalid button:hover {
@@ -272,17 +298,59 @@ ul {
 /* ==============================================
     Media Queries
 ================================================= */
-@media (min-width: 505px) {
-    .cats-list li {
-        font-size: 2rem;
-    }
-    
-    .clicks-record {
-        font-size: 3rem;
-    }
-    
-    .name {
-        font-size: 1.5rem;
+/* --- Font Size --- */
+@media (min-width: 509px) {
+    html {
+        font-size: 1.1rem;
     }
 }
 
+@media (min-width: 839px) {
+    html {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 638px) {
+    html {
+        font-size: 1.2rem;
+    }
+}
+
+/* --- Row Layout --- */
+@media (min-width: 638px) {
+    .cat-and-add {
+        flex-direction: row;
+    }
+    .cat img {
+        max-width: 20rem;
+        max-height: 16rem;
+    }
+}
+
+/* --- Minor Breakpoints & Max Width --- */
+@media (min-width: 920px) {
+    .cat-and-add {
+        flex-direction: row;
+    }
+    .cat img {
+        max-width: 22rem;
+        max-height: 18rem;
+    }
+    .add-cat {
+        padding: .7em;
+    }
+    .add-cat input {
+        font-size: .8rem;
+        margin-bottom: .5em;
+    }
+    .add-cat button {
+        font-size: 1rem;
+    }
+    .cats-list,
+    .cat-and-add {
+/*        min-width: 920px;*/
+        padding-left: calc(100vw / 2 - 920px /2) !important;
+        padding-right: calc(100vw / 2 - 920px /2) !important;
+    }
+}
