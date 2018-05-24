@@ -178,6 +178,9 @@ catsNamesList.addEventListener('click', event => {
             case 'remove fa fa-times':
                 catLi.remove();
                 cats.delete(clickedCatName);
+                if (clickedCatName === currentCat) {
+                    displayRandomCat();
+                } 
                 if (cats.size === 0) {
                     catView.empty()
                     document.body.style.backgroundColor = 'transparent';
@@ -185,9 +188,7 @@ catsNamesList.addEventListener('click', event => {
                     addCatForm.style.color = 'grey';
                     newCat.addBtn.style.backgroundColor = 'grey';
                     addCatSign.style.color = 'grey';
-                } else {
-                    displayRandomCat();
-                }   
+                }  
         }
         
     }
